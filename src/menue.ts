@@ -1,4 +1,5 @@
 export const MENUEPUNKTE = [
+  'Startseite',
   'Meine Daten',
   'Prüfungstermine',
   'Offene Aufgaben',

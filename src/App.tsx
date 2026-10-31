@@ -3,6 +3,7 @@ import './App.css'
 import Layout from './components/Layout.tsx'
 import Stundenplan from './components/Stundenplan.tsx'
 import ExamList from './exams/ExamList.tsx'
+import HomeScreen from './screens/HomeScreen.jsx'
 import LoginScreen from './screens/LoginScreen.jsx'
 import RegisterScreen from './screens/RegisterScreen.jsx'
 import { clearSession, getSession } from './auth.js'
@@ -15,11 +16,11 @@ const lektionen: Lektion[] = stundenplanDaten
 function App() {
   const [benutzer, setBenutzer] = useState<Benutzer | null>(() => getSession())
   const [zeigeRegistrierung, setZeigeRegistrierung] = useState(false)
-  const [aktiv, setAktiv] = useState<Menuepunkt>('Unterrichtsplan')
+  const [aktiv, setAktiv] = useState<Menuepunkt>('Startseite')
 
   function angemeldet(neuerBenutzer: Benutzer) {
     setBenutzer(neuerBenutzer)
-    setAktiv('Unterrichtsplan')
+    setAktiv('Startseite')
     setZeigeRegistrierung(false)
   }
 
@@ -40,7 +41,11 @@ function App() {
 
   return (
     <Layout benutzer={benutzer} onAbmelden={abmelden} aktiv={aktiv} onWaehlen={setAktiv}>
-      {aktiv === 'Unterrichtsplan' ? (
+      {aktiv === 'Startseite' ? (
+        <div className="page">
+          <HomeScreen user={benutzer} />
+        </div>
+      ) : aktiv === 'Unterrichtsplan' ? (
         <Stundenplan lektionen={lektionen} />
       ) : aktiv === 'Prüfungstermine' ? (
         <ExamList />
