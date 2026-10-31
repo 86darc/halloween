@@ -128,16 +128,21 @@
   margin-bottom: 24px;
 }
 
-.sidebar__bild {
-  display: grid;
-  place-items: center;
+/* Profilmenü aus dem Login (ProfileMenu.jsx), in der Sidebar grösser und zentriert */
+.sidebar .avatar {
   width: 80px;
   height: 80px;
-  border-radius: 50%;
+  border: 3px solid var(--color-orange-light);
   background-color: var(--color-accent);
   color: var(--color-brown-dark);
   font-size: 1.5rem;
-  font-weight: 700;
+}
+
+.sidebar .menu {
+  z-index: 10;
+  right: auto;
+  left: 50%;
+  translate: -50% 0;
 }
 
 .sidebar__menu {

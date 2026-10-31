@@ -1,3 +1,8 @@
+export interface Benutzer {
+  name: string
+  email: string
+}
+
 export interface Lektion {
   id: number
   /** Format JJJJ-MM-TT */

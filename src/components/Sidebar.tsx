@@ -1,16 +1,21 @@
+import ProfileMenu from './ProfileMenu.jsx'
 import { MENUEPUNKTE, type Menuepunkt } from '../menue.ts'
+import type { Benutzer } from '../types.ts'
 
 interface SidebarProps {
+  benutzer: Benutzer
+  onAbmelden: () => void
   aktiv: Menuepunkt
   onWaehlen: (punkt: Menuepunkt) => void
 }
 
-function Sidebar({ aktiv, onWaehlen }: SidebarProps) {
+function Sidebar({ benutzer, onAbmelden, aktiv, onWaehlen }: SidebarProps) {
   return (
     <aside className="sidebar">
       <div className="sidebar__profil">
-        <div className="sidebar__bild" aria-hidden="true">MM</div>
-        <span>Max Muster</span>
+        {/* Klick auf das Profilbild öffnet «Abmelden» (SCRUM-21) */}
+        <ProfileMenu user={benutzer} onLogout={onAbmelden} />
+        <span>{benutzer.name}</span>
       </div>
       <nav>
         <ul className="sidebar__menu">
