@@ -9,6 +9,9 @@
   --color-surface: var(--color-brown);
   --color-accent: var(--color-orange);
   --color-text: var(--color-cream);
+  --color-text-muted: color-mix(in srgb, var(--color-cream) 75%, transparent);
+  --color-border: color-mix(in srgb, var(--color-orange) 30%, transparent);
+  --color-glow: color-mix(in srgb, var(--color-orange) 35%, transparent);
 
   /* Verspielte Schrift nur für Überschriften, Inhalte bleiben gut lesbar */
   --font-heading: 'Creepster', system-ui, sans-serif;

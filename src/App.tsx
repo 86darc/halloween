@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Layout from './components/Layout.tsx'
 import Stundenplan from './components/Stundenplan.tsx'
+import ExamList from './exams/ExamList.tsx'
 import LoginScreen from './screens/LoginScreen.jsx'
 import RegisterScreen from './screens/RegisterScreen.jsx'
 import { clearSession, getSession } from './auth.js'
@@ -41,6 +42,8 @@ function App() {
     <Layout benutzer={benutzer} onAbmelden={abmelden} aktiv={aktiv} onWaehlen={setAktiv}>
       {aktiv === 'Unterrichtsplan' ? (
         <Stundenplan lektionen={lektionen} />
+      ) : aktiv === 'Prüfungstermine' ? (
+        <ExamList />
       ) : (
         <section>
           <h1>{aktiv}</h1>
