@@ -1,11 +1,9 @@
-@import '@fontsource/creepster';
-
 :root {
-  --color-orange: #e8730c;
-  --color-orange-light: #f5a04a;
-  --color-brown: #4a2c17;
-  --color-brown-dark: #24140a;
-  --color-cream: #f7e7d3;
+  --color-orange: #ff7518;
+  --color-orange-light: #ffb070;
+  --color-brown: #5c3a21;
+  --color-brown-dark: #1e120a;
+  --color-cream: #f5e6d3;
 
   --color-background: var(--color-brown-dark);
   --color-surface: var(--color-brown);
@@ -15,7 +13,8 @@
   --color-border: color-mix(in srgb, var(--color-orange) 30%, transparent);
   --color-glow: color-mix(in srgb, var(--color-orange) 35%, transparent);
 
-  --font-display: 'Creepster', system-ui, sans-serif;
+  /* Verspielte Schrift nur für Überschriften, Inhalte bleiben gut lesbar */
+  --font-heading: 'Creepster', system-ui, sans-serif;
 
   font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
   color: var(--color-text);
@@ -31,21 +30,4 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(
-    ellipse 80% 50% at 50% 0,
-    var(--color-glow),
-    transparent
-  );
-  background-repeat: no-repeat;
-}
-
-.cobweb {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: -1;
-  width: clamp(7rem, 22vw, 14rem);
-  color: var(--color-orange-light);
-  opacity: 0.3;
-  pointer-events: none;
 }

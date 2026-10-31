@@ -1,13 +1,13 @@
-/* Halloween-Theme: Kürbis-Orange auf dunklem Holzbraun */
+/* Halloween-Theme: Farben kommen aus index.css, damit Login und App gleich aussehen */
 :root {
-  --bg: #170d07;
-  --surface: #261409;
-  --ink: #f7e6d0;
-  --muted: #b99a7c;
-  --line: #4a2a14;
-  --primary: #ff8a2b;
-  --primary-ink: #1a0d05;
-  --accent: #f2b441;
+  --bg: var(--color-background);
+  --surface: var(--color-surface);
+  --ink: var(--color-text);
+  --muted: #c9ae93;
+  --line: #7a4f2e;
+  --primary: var(--color-orange);
+  --primary-ink: var(--color-brown-dark);
+  --accent: var(--color-orange-light);
   --error: #ff8f85;
   --error-bg: #3b1519;
   color-scheme: dark;
@@ -36,7 +36,9 @@ body {
 #root { min-height: 100%; display: flex; flex-direction: column; }
 
 h1, h2, h3 {
-  font-family: "Bricolage Grotesque", "Figtree", system-ui, sans-serif;
+  font-family: var(--font-heading);
+  font-weight: 400;
+  letter-spacing: 0.04em;
   margin: 0;
   line-height: 1.15;
 }
@@ -52,7 +54,7 @@ button, input { font: inherit; color: inherit; }
   display: grid; place-items: center;
   font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.02em;
 }
-.logo-name { font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 24px; line-height: 1; }
+.logo-name { font-family: var(--font-heading); font-size: 28px; letter-spacing: 0.04em; line-height: 1; color: var(--primary); }
 .logo-sub { font-size: 13px; color: var(--muted); margin-top: 3px; }
 
 /* Login */
