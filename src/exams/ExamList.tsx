@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Pumpkin from '../components/Pumpkin'
-import { daysUntil, getUpcomingExams, toIsoDate } from './exams'
+import { alsIsoDatum } from '../utils/datum.ts'
+import { daysUntil, getUpcomingExams } from './exams'
 import { testExams } from './testExams'
 import './ExamList.css'
 
@@ -17,7 +18,7 @@ function formatCountdown(days: number) {
 }
 
 function ExamList() {
-  const [today] = useState(() => toIsoDate(new Date()))
+  const [today] = useState(() => alsIsoDatum(new Date()))
   const exams = getUpcomingExams(testExams, today)
 
   return (
