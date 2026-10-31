@@ -6,6 +6,8 @@
     "module": "esnext",
     "types": ["vite/client"],
     "allowArbitraryExtensions": true,
+    /* Der Login-Code (SCRUM-19 bis 22) ist in JavaScript geschrieben */
+    "allowJs": true,
     "skipLibCheck": true,
 
     /* Bundler mode */

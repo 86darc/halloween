@@ -1,14 +1,17 @@
 :root {
-  --color-orange: #e8730c;
-  --color-orange-light: #f5a04a;
-  --color-brown: #4a2c17;
-  --color-brown-dark: #24140a;
-  --color-cream: #f7e7d3;
+  --color-orange: #ff7518;
+  --color-orange-light: #ffb070;
+  --color-brown: #5c3a21;
+  --color-brown-dark: #1e120a;
+  --color-cream: #f5e6d3;
 
   --color-background: var(--color-brown-dark);
   --color-surface: var(--color-brown);
   --color-accent: var(--color-orange);
   --color-text: var(--color-cream);
+
+  /* Verspielte Schrift nur für Überschriften, Inhalte bleiben gut lesbar */
+  --font-heading: 'Creepster', system-ui, sans-serif;
 
   font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
   color: var(--color-text);
