@@ -1,0 +1,488 @@
+[
+  {
+    "id": 1,
+    "datum": "2026-10-19",
+    "start": "08:15",
+    "ende": "09:45",
+    "fach": "SQL",
+    "zimmer": "S3 Z12",
+    "dozent": "Herr Keller"
+  },
+  {
+    "id": 2,
+    "datum": "2026-10-19",
+    "start": "10:00",
+    "ende": "11:30",
+    "fach": "SQL",
+    "zimmer": "S3 Z12",
+    "dozent": "Herr Keller"
+  },
+  {
+    "id": 3,
+    "datum": "2026-10-19",
+    "start": "12:30",
+    "ende": "14:00",
+    "fach": "Mathematik",
+    "zimmer": "S1 Z08",
+    "dozent": "Herr Baumann"
+  },
+  {
+    "id": 4,
+    "datum": "2026-10-20",
+    "start": "08:15",
+    "ende": "09:45",
+    "fach": "Java",
+    "zimmer": "S2 Z04",
+    "dozent": "Frau Meier"
+  },
+  {
+    "id": 5,
+    "datum": "2026-10-20",
+    "start": "10:00",
+    "ende": "11:30",
+    "fach": "Java",
+    "zimmer": "S2 Z04",
+    "dozent": "Frau Meier"
+  },
+  {
+    "id": 6,
+    "datum": "2026-10-20",
+    "start": "14:15",
+    "ende": "15:45",
+    "fach": "Englisch",
+    "zimmer": "S1 Z03",
+    "dozent": "Frau Rossi"
+  },
+  {
+    "id": 7,
+    "datum": "2026-10-21",
+    "start": "10:00",
+    "ende": "11:30",
+    "fach": "Netzwerktechnik",
+    "zimmer": "S4 Z15",
+    "dozent": "Herr Gerber"
+  },
+  {
+    "id": 8,
+    "datum": "2026-10-21",
+    "start": "12:30",
+    "ende": "14:00",
+    "fach": "Netzwerktechnik",
+    "zimmer": "S4 Z15",
+    "dozent": "Herr Gerber"
+  },
+  {
+    "id": 9,
+    "datum": "2026-10-22",
+    "start": "08:15",
+    "ende": "09:45",
+    "fach": "Mathematik",
+    "zimmer": "S1 Z08",
+    "dozent": "Herr Baumann"
+  },
+  {
+    "id": 10,
+    "datum": "2026-10-22",
+    "start": "12:30",
+    "ende": "14:00",
+    "fach": "Webentwicklung",
+    "zimmer": "S3 Z14",
+    "dozent": "Herr Frei"
+  },
+  {
+    "id": 11,
+    "datum": "2026-10-22",
+    "start": "14:15",
+    "ende": "15:45",
+    "fach": "Webentwicklung",
+    "zimmer": "S3 Z14",
+    "dozent": "Herr Frei"
+  },
+  {
+    "id": 12,
+    "datum": "2026-10-23",
+    "start": "08:15",
+    "ende": "09:45",
+    "fach": "Projektmanagement",
+    "zimmer": "S2 Z10",
+    "dozent": "Frau Steiner"
+  },
+  {
+    "id": 13,
+    "datum": "2026-10-23",
+    "start": "10:00",
+    "ende": "11:30",
+    "fach": "Englisch",
+    "zimmer": "S1 Z03",
+    "dozent": "Frau Rossi"
+  },
+  {
+    "id": 14,
+    "datum": "2026-10-26",
+    "start": "08:15",
+    "ende": "09:45",
+    "fach": "SQL",
+    "zimmer": "S3 Z12",
+    "dozent": "Herr Keller"
+  },
+  {
+    "id": 15,
+    "datum": "2026-10-26",
+    "start": "10:00",
+    "ende": "11:30",
+    "fach": "SQL",
+    "zimmer": "S3 Z12",
+    "dozent": "Herr Keller"
+  },
+  {
+    "id": 16,
+    "datum": "2026-10-26",
+    "start": "12:30",
+    "ende": "14:00",
+    "fach": "Mathematik",
+    "zimmer": "S1 Z08",
+    "dozent": "Herr Baumann"
+  },
+  {
+    "id": 17,
+    "datum": "2026-10-27",
+    "start": "08:15",
+    "ende": "09:45",
+    "fach": "Java",
+    "zimmer": "S2 Z04",
+    "dozent": "Frau Meier"
+  },
+  {
+    "id": 18,
+    "datum": "2026-10-27",
+    "start": "10:00",
+    "ende": "11:30",
+    "fach": "Java",
+    "zimmer": "S2 Z04",
+    "dozent": "Frau Meier"
+  },
+  {
+    "id": 19,
+    "datum": "2026-10-27",
+    "start": "14:15",
+    "ende": "15:45",
+    "fach": "Englisch",
+    "zimmer": "S1 Z03",
+    "dozent": "Frau Rossi"
+  },
+  {
+    "id": 20,
+    "datum": "2026-10-28",
+    "start": "10:00",
+    "ende": "11:30",
+    "fach": "Netzwerktechnik",
+    "zimmer": "S4 Z15",
+    "dozent": "Herr Gerber"
+  },
+  {
+    "id": 21,
+    "datum": "2026-10-28",
+    "start": "12:30",
+    "ende": "14:00",
+    "fach": "Netzwerktechnik",
+    "zimmer": "S4 Z15",
+    "dozent": "Herr Gerber"
+  },
+  {
+    "id": 22,
+    "datum": "2026-10-29",
+    "start": "08:15",
+    "ende": "09:45",
+    "fach": "Mathematik",
+    "zimmer": "S1 Z08",
+    "dozent": "Herr Baumann"
+  },
+  {
+    "id": 23,
+    "datum": "2026-10-29",
+    "start": "12:30",
+    "ende": "14:00",
+    "fach": "Webentwicklung",
+    "zimmer": "S3 Z14",
+    "dozent": "Herr Frei"
+  },
+  {
+    "id": 24,
+    "datum": "2026-10-29",
+    "start": "14:15",
+    "ende": "15:45",
+    "fach": "Webentwicklung",
+    "zimmer": "S3 Z14",
+    "dozent": "Herr Frei"
+  },
+  {
+    "id": 25,
+    "datum": "2026-10-30",
+    "start": "08:15",
+    "ende": "09:45",
+    "fach": "Projektmanagement",
+    "zimmer": "S2 Z10",
+    "dozent": "Frau Steiner"
+  },
+  {
+    "id": 26,
+    "datum": "2026-10-30",
+    "start": "10:00",
+    "ende": "11:30",
+    "fach": "Englisch",
+    "zimmer": "S1 Z03",
+    "dozent": "Frau Rossi"
+  },
+  {
+    "id": 27,
+    "datum": "2026-11-02",
+    "start": "08:15",
+    "ende": "09:45",
+    "fach": "SQL",
+    "zimmer": "S3 Z12",
+    "dozent": "Herr Keller"
+  },
+  {
+    "id": 28,
+    "datum": "2026-11-02",
+    "start": "10:00",
+    "ende": "11:30",
+    "fach": "SQL",
+    "zimmer": "S3 Z12",
+    "dozent": "Herr Keller"
+  },
+  {
+    "id": 29,
+    "datum": "2026-11-02",
+    "start": "12:30",
+    "ende": "14:00",
+    "fach": "Mathematik",
+    "zimmer": "S1 Z08",
+    "dozent": "Herr Baumann"
+  },
+  {
+    "id": 30,
+    "datum": "2026-11-03",
+    "start": "08:15",
+    "ende": "09:45",
+    "fach": "Java",
+    "zimmer": "S2 Z04",
+    "dozent": "Frau Meier"
+  },
+  {
+    "id": 31,
+    "datum": "2026-11-03",
+    "start": "10:00",
+    "ende": "11:30",
+    "fach": "Java",
+    "zimmer": "S2 Z04",
+    "dozent": "Frau Meier"
+  },
+  {
+    "id": 32,
+    "datum": "2026-11-03",
+    "start": "14:15",
+    "ende": "15:45",
+    "fach": "Englisch",
+    "zimmer": "S1 Z03",
+    "dozent": "Frau Rossi"
+  },
+  {
+    "id": 33,
+    "datum": "2026-11-04",
+    "start": "08:15",
+    "ende": "09:45",
+    "fach": "SQL",
+    "zimmer": "S3 Z12",
+    "dozent": "Herr Keller"
+  },
+  {
+    "id": 34,
+    "datum": "2026-11-04",
+    "start": "10:00",
+    "ende": "11:30",
+    "fach": "Netzwerktechnik",
+    "zimmer": "S4 Z15",
+    "dozent": "Herr Gerber"
+  },
+  {
+    "id": 35,
+    "datum": "2026-11-04",
+    "start": "12:30",
+    "ende": "14:00",
+    "fach": "Netzwerktechnik",
+    "zimmer": "S4 Z15",
+    "dozent": "Herr Gerber"
+  },
+  {
+    "id": 36,
+    "datum": "2026-11-05",
+    "start": "08:15",
+    "ende": "09:45",
+    "fach": "Mathematik",
+    "zimmer": "S1 Z08",
+    "dozent": "Herr Baumann"
+  },
+  {
+    "id": 37,
+    "datum": "2026-11-05",
+    "start": "12:30",
+    "ende": "14:00",
+    "fach": "Webentwicklung",
+    "zimmer": "S3 Z14",
+    "dozent": "Herr Frei"
+  },
+  {
+    "id": 38,
+    "datum": "2026-11-05",
+    "start": "14:15",
+    "ende": "15:45",
+    "fach": "Webentwicklung",
+    "zimmer": "S3 Z14",
+    "dozent": "Herr Frei"
+  },
+  {
+    "id": 39,
+    "datum": "2026-11-06",
+    "start": "08:15",
+    "ende": "09:45",
+    "fach": "Projektmanagement",
+    "zimmer": "S2 Z10",
+    "dozent": "Frau Steiner"
+  },
+  {
+    "id": 40,
+    "datum": "2026-11-06",
+    "start": "10:00",
+    "ende": "11:30",
+    "fach": "Englisch",
+    "zimmer": "S1 Z03",
+    "dozent": "Frau Rossi"
+  },
+  {
+    "id": 41,
+    "datum": "2026-11-09",
+    "start": "08:15",
+    "ende": "09:45",
+    "fach": "SQL",
+    "zimmer": "S3 Z12",
+    "dozent": "Herr Keller"
+  },
+  {
+    "id": 42,
+    "datum": "2026-11-09",
+    "start": "10:00",
+    "ende": "11:30",
+    "fach": "SQL",
+    "zimmer": "S3 Z12",
+    "dozent": "Herr Keller"
+  },
+  {
+    "id": 43,
+    "datum": "2026-11-09",
+    "start": "12:30",
+    "ende": "14:00",
+    "fach": "Mathematik",
+    "zimmer": "S1 Z08",
+    "dozent": "Herr Baumann"
+  },
+  {
+    "id": 44,
+    "datum": "2026-11-10",
+    "start": "08:15",
+    "ende": "09:45",
+    "fach": "Java",
+    "zimmer": "S2 Z04",
+    "dozent": "Frau Meier"
+  },
+  {
+    "id": 45,
+    "datum": "2026-11-10",
+    "start": "10:00",
+    "ende": "11:30",
+    "fach": "Java",
+    "zimmer": "S2 Z04",
+    "dozent": "Frau Meier"
+  },
+  {
+    "id": 46,
+    "datum": "2026-11-10",
+    "start": "14:15",
+    "ende": "15:45",
+    "fach": "Englisch",
+    "zimmer": "S1 Z03",
+    "dozent": "Frau Rossi"
+  },
+  {
+    "id": 47,
+    "datum": "2026-11-11",
+    "start": "10:00",
+    "ende": "11:30",
+    "fach": "Netzwerktechnik",
+    "zimmer": "S4 Z15",
+    "dozent": "Herr Gerber"
+  },
+  {
+    "id": 48,
+    "datum": "2026-11-11",
+    "start": "12:30",
+    "ende": "14:00",
+    "fach": "Netzwerktechnik",
+    "zimmer": "S4 Z15",
+    "dozent": "Herr Gerber"
+  },
+  {
+    "id": 49,
+    "datum": "2026-11-12",
+    "start": "08:15",
+    "ende": "09:45",
+    "fach": "Mathematik",
+    "zimmer": "S1 Z08",
+    "dozent": "Herr Baumann"
+  },
+  {
+    "id": 50,
+    "datum": "2026-11-12",
+    "start": "12:30",
+    "ende": "14:00",
+    "fach": "Webentwicklung",
+    "zimmer": "S3 Z14",
+    "dozent": "Herr Frei"
+  },
+  {
+    "id": 51,
+    "datum": "2026-11-12",
+    "start": "14:15",
+    "ende": "15:45",
+    "fach": "Webentwicklung",
+    "zimmer": "S3 Z14",
+    "dozent": "Herr Frei"
+  },
+  {
+    "id": 52,
+    "datum": "2026-11-13",
+    "start": "08:15",
+    "ende": "09:45",
+    "fach": "Projektmanagement",
+    "zimmer": "S2 Z10",
+    "dozent": "Frau Steiner"
+  },
+  {
+    "id": 53,
+    "datum": "2026-11-13",
+    "start": "10:00",
+    "ende": "11:30",
+    "fach": "Projektmanagement",
+    "zimmer": "S2 Z10",
+    "dozent": "Frau Steiner"
+  },
+  {
+    "id": 54,
+    "datum": "2026-11-13",
+    "start": "12:30",
+    "ende": "14:00",
+    "fach": "Java",
+    "zimmer": "S2 Z04",
+    "dozent": "Frau Meier"
+  }
+]
