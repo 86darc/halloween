@@ -8,6 +8,7 @@ import Notenuebersicht from './noten/Notenuebersicht.tsx'
 import ExamList from './exams/ExamList.tsx'
 import Lernmaterial from './lernmaterial/Lernmaterial.tsx'
 import HomeScreen from './screens/HomeScreen.jsx'
+import ExamRegistration from './exams/ExamRegistration.tsx'
 import LoginScreen from './screens/LoginScreen.jsx'
 import RegisterScreen from './screens/RegisterScreen.jsx'
 import { clearSession, getSession } from './auth.js'
@@ -59,6 +60,8 @@ function App() {
         <Anwesenheit lektionen={lektionen} />
       ) : aktiv === 'Prüfungstermine' ? (
         <ExamList />
+      ) : aktiv === 'Prüfungsanmeldung' ? (
+        <ExamRegistration benutzer={benutzer} />
       ) : aktiv === 'Noten' ? (
         <Notenuebersicht />
       ) : (

@@ -1,0 +1,197 @@
+.registration {
+  width: min(100%, 46rem);
+  margin-inline: auto;
+  padding-block: 1.5rem 2.5rem;
+}
+
+.registration-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.registration-header h1 {
+  margin: 0;
+  text-shadow: 0 0 1.5rem var(--color-glow);
+}
+
+.registration-header p {
+  margin: 0.5rem 0 0;
+  color: var(--color-text-muted);
+}
+
+.registration-title {
+  margin: 0 0 0.875rem;
+  font-size: 1.5rem;
+  color: var(--color-orange-light);
+}
+
+.registration-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.offer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.5rem 1rem;
+  align-items: center;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-border);
+  border-radius: 0.875rem;
+  background-color: var(--color-surface);
+}
+
+.offer--registered {
+  border-left-color: var(--color-accent);
+}
+
+.offer-info {
+  display: grid;
+  min-width: 0;
+}
+
+.offer-info h3 {
+  margin: 0;
+  font-family: inherit;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: normal;
+  overflow-wrap: anywhere;
+}
+
+.offer-info time {
+  font-size: 0.875rem;
+}
+
+.offer-deadline {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.offer-actions {
+  display: grid;
+  justify-items: end;
+  gap: 0.5rem;
+}
+
+.offer-button {
+  min-width: 7.5rem;
+  padding: 0.4375rem 1rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  color: var(--color-brown-dark);
+  background-color: var(--color-accent);
+  cursor: pointer;
+}
+
+.offer-button:hover {
+  filter: brightness(1.08);
+}
+
+.offer-button--secondary {
+  color: var(--color-accent);
+  background-color: transparent;
+}
+
+.offer-button--secondary:hover {
+  color: var(--color-brown-dark);
+  background-color: var(--color-accent);
+  filter: none;
+}
+
+.offer-hint {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.offer-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--color-orange-light);
+  background-color: var(--color-background);
+}
+
+.offer--registered .offer-status {
+  color: var(--color-brown-dark);
+  background-color: var(--color-orange-light);
+}
+
+.offer-status--closed {
+  color: var(--color-text-muted);
+}
+
+/* Bleibt immer im DOM, damit Screenreader neue Meldungen sicher vorlesen */
+.registration-message:empty {
+  display: none;
+}
+
+.registration-message {
+  margin: 0 0 1.25rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 0.875rem;
+  background-color: var(--color-surface);
+  box-shadow: 0 0 1.25rem var(--color-glow);
+  text-align: center;
+  font-weight: 600;
+}
+
+.confirm {
+  width: min(calc(100% - 2rem), 26rem);
+  padding: 1.5rem;
+  border: 1px solid var(--color-accent);
+  border-top: 4px solid var(--color-accent);
+  border-radius: 0.875rem;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  box-shadow: 0 1.25rem 3rem rgb(0 0 0 / 0.5);
+}
+
+.confirm::backdrop {
+  background-color: rgb(30 18 10 / 0.75);
+}
+
+.confirm h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.5rem;
+  color: var(--color-accent);
+}
+
+.confirm p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.confirm-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.registration-empty {
+  padding: 2rem 1rem;
+  border: 1px dashed var(--color-border);
+  border-radius: 0.875rem;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 30rem) {
+  .offer {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .offer-actions {
+    justify-items: start;
+  }
+}
