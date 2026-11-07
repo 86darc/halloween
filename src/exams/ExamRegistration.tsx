@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { alsIsoDatum } from '../utils/datum.ts'
+import ConfirmDialog from './ConfirmDialog.tsx'
 import { getUpcomingExams, type Exam } from './exams'
 import { isRegistrationOpen, loadRegistrations, registrationDeadline, saveRegistrations } from './registration.ts'
 import { testExams } from './testExams'
@@ -24,17 +25,31 @@ interface ExamRegistrationProps {
 function ExamRegistration({ benutzer }: ExamRegistrationProps) {
   const [today] = useState(() => alsIsoDatum(new Date()))
   const [registrations, setRegistrations] = useState(() => loadRegistrations(benutzer.email))
+  // Prüfung, für die gerade der Bestätigungsdialog offen ist
+  const [pending, setPending] = useState<Exam | null>(null)
+  const [message, setMessage] = useState('')
   const exams = getUpcomingExams(testExams, today)
+  const pendingRegistered = pending !== null && registrations.includes(pending.id)
+
+  function askToToggle(exam: Exam) {
+    setMessage('')
+    setPending(exam)
+  }
 
   function toggleRegistration(exam: Exam) {
+    setPending(null)
     // Nach Ablauf der Frist ist weder An- noch Abmeldung möglich
     if (!isRegistrationOpen(exam, today)) return
 
-    const next = registrations.includes(exam.id)
-      ? registrations.filter((id) => id !== exam.id)
-      : [...registrations, exam.id]
+    const wasRegistered = registrations.includes(exam.id)
+    const next = wasRegistered ? registrations.filter((id) => id !== exam.id) : [...registrations, exam.id]
     saveRegistrations(benutzer.email, next)
     setRegistrations(next)
+    setMessage(
+      wasRegistered
+        ? `Du bist von der Prüfung ${exam.subject} abgemeldet.`
+        : `Du bist für die Prüfung ${exam.subject} am ${formatDate(exam.date, { dateStyle: 'long' })} angemeldet.`,
+    )
   }
 
   return (
@@ -43,6 +58,24 @@ function ExamRegistration({ benutzer }: ExamRegistrationProps) {
         <h1>Prüfungsanmeldung</h1>
         <p>Melde dich bis eine Woche vor der Prüfung an oder ab.</p>
       </header>
+
+      <p className="registration-message" role="status">
+        {message}
+      </p>
+
+      {pending && (
+        <ConfirmDialog
+          title={pendingRegistered ? 'Abmeldung bestätigen' : 'Anmeldung bestätigen'}
+          text={
+            pendingRegistered
+              ? `Möchtest du dich wirklich von der Prüfung ${pending.subject} abmelden?`
+              : `Möchtest du dich für die Prüfung ${pending.subject} am ${formatDate(pending.date, { dateStyle: 'full' })} anmelden?`
+          }
+          confirmLabel={pendingRegistered ? 'Abmelden' : 'Anmelden'}
+          onConfirm={() => toggleRegistration(pending)}
+          onCancel={() => setPending(null)}
+        />
+      )}
 
       {exams.length === 0 ? (
         <p className="registration-empty">Zurzeit sind keine Prüfungen ausgeschrieben.</p>
@@ -77,7 +110,7 @@ function ExamRegistration({ benutzer }: ExamRegistrationProps) {
                       <button
                         type="button"
                         className={registered ? 'offer-button offer-button--secondary' : 'offer-button'}
-                        onClick={() => toggleRegistration(exam)}
+                        onClick={() => askToToggle(exam)}
                         aria-label={registered ? `Von ${exam.subject} abmelden` : `Für ${exam.subject} anmelden`}
                       >
                         {registered ? 'Abmelden' : 'Anmelden'}
