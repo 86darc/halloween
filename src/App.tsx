@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Layout from './components/Layout.tsx'
+import OffeneAufgaben from './aufgaben/OffeneAufgaben.tsx'
 import Stundenplan from './components/Stundenplan.tsx'
 import ExamList from './exams/ExamList.tsx'
 import HomeScreen from './screens/HomeScreen.jsx'
@@ -45,6 +46,8 @@ function App() {
         <div className="page">
           <HomeScreen user={benutzer} />
         </div>
+      ) : aktiv === 'Offene Aufgaben' ? (
+        <OffeneAufgaben benutzer={benutzer} />
       ) : aktiv === 'Unterrichtsplan' ? (
         <Stundenplan lektionen={lektionen} />
       ) : aktiv === 'Prüfungstermine' ? (
