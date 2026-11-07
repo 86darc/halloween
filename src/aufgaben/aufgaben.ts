@@ -35,3 +35,11 @@ export function fristText(tage: number) {
   if (tage === 1) return 'Morgen fällig'
   return `in ${tage} Tagen`
 }
+
+export function abgegebeneSpeichern(email: string, ids: number[]) {
+  try {
+    localStorage.setItem(SPEICHER_PREFIX + email, JSON.stringify(ids))
+  } catch {
+    /* ignorieren, die Abgabe gilt dann nur bis zum Neuladen */
+  }
+}

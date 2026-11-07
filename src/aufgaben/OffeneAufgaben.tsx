@@ -1,5 +1,13 @@
 import { useState } from 'react'
-import { abgegebeneLaden, fristText, nachAbgabedatum, offeneAufgaben } from './aufgaben.ts'
+import AufgabeDetail from './AufgabeDetail.tsx'
+import {
+  abgegebeneLaden,
+  abgegebeneSpeichern,
+  fristText,
+  nachAbgabedatum,
+  offeneAufgaben,
+  type Aufgabe,
+} from './aufgaben.ts'
 import { testAufgaben } from './testAufgaben.ts'
 import { daysUntil } from '../exams/exams.ts'
 import type { Benutzer } from '../types.ts'
@@ -24,8 +32,37 @@ interface OffeneAufgabenProps {
 
 function OffeneAufgaben({ benutzer }: OffeneAufgabenProps) {
   const [heute] = useState(() => alsIsoDatum(new Date()))
-  const [abgegeben] = useState(() => abgegebeneLaden(benutzer.email))
+  const [abgegeben, setAbgegeben] = useState(() => abgegebeneLaden(benutzer.email))
+  const [gewaehlt, setGewaehlt] = useState<Aufgabe | null>(null)
+  const [meldung, setMeldung] = useState('')
   const offen = nachAbgabedatum(offeneAufgaben(testAufgaben, abgegeben))
+
+  function abgeben(aufgabe: Aufgabe) {
+    const neu = [...abgegeben, aufgabe.id]
+    abgegebeneSpeichern(benutzer.email, neu)
+    setAbgegeben(neu)
+    setGewaehlt(null)
+    setMeldung(`Abgegeben: ${aufgabe.titel}`)
+  }
+
+  function oeffnen(aufgabe: Aufgabe) {
+    setMeldung('')
+    setGewaehlt(aufgabe)
+  }
+
+  if (gewaehlt) {
+    return (
+      <section className="aufgaben">
+        <AufgabeDetail
+          aufgabe={gewaehlt}
+          datum={alsDatum(gewaehlt.abgabedatum).toLocaleDateString(LOCALE, { dateStyle: 'full' })}
+          tage={daysUntil(gewaehlt.abgabedatum, heute)}
+          onZurueck={() => setGewaehlt(null)}
+          onAbgeben={() => abgeben(gewaehlt)}
+        />
+      </section>
+    )
+  }
 
   return (
     <section className="aufgaben">
@@ -36,6 +73,12 @@ function OffeneAufgaben({ benutzer }: OffeneAufgabenProps) {
         </p>
       </header>
 
+      {meldung && (
+        <p className="aufgaben__meldung" role="status">
+          {meldung}
+        </p>
+      )}
+
       {offen.length === 0 ? (
         <p className="aufgaben__leer">Alles abgegeben. Zeit für Süsses!</p>
       ) : (
@@ -44,22 +87,24 @@ function OffeneAufgaben({ benutzer }: OffeneAufgabenProps) {
             const tage = daysUntil(aufgabe.abgabedatum, heute)
 
             return (
-              <li key={aufgabe.id} className={dringlichkeit(tage)}>
-                <div className="aufgabe__info">
-                  <h2>{aufgabe.titel}</h2>
-                  <span className="aufgabe__modul">{aufgabe.modul}</span>
-                </div>
-                <div className="aufgabe__abgabe">
-                  <span>Abgabe</span>
-                  <time dateTime={aufgabe.abgabedatum}>
-                    {alsDatum(aufgabe.abgabedatum).toLocaleDateString(LOCALE, {
-                      weekday: 'short',
-                      day: 'numeric',
-                      month: 'long',
-                    })}
-                  </time>
-                  <span className="aufgabe__frist">{fristText(tage)}</span>
-                </div>
+              <li key={aufgabe.id}>
+                <button type="button" className={dringlichkeit(tage)} onClick={() => oeffnen(aufgabe)}>
+                  <span className="aufgabe__info">
+                    <strong className="aufgabe__titel">{aufgabe.titel}</strong>
+                    <span className="aufgabe__modul">{aufgabe.modul}</span>
+                  </span>
+                  <span className="aufgabe__abgabe">
+                    <span className="aufgabe__label">Abgabe</span>
+                    <time dateTime={aufgabe.abgabedatum}>
+                      {alsDatum(aufgabe.abgabedatum).toLocaleDateString(LOCALE, {
+                        weekday: 'short',
+                        day: 'numeric',
+                        month: 'long',
+                      })}
+                    </time>
+                    <span className="aufgabe__frist">{fristText(tage)}</span>
+                  </span>
+                </button>
               </li>
             )
           })}
