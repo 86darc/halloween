@@ -5,6 +5,7 @@ export const MENUEPUNKTE = [
   'Offene Aufgaben',
   'Lernmaterial',
   'Unterrichtsplan',
+  'Anwesenheit',
   'Noten',
   'Einstellungen',
 ] as const

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import Anwesenheit from './anwesenheit/Anwesenheit.tsx'
 import Layout from './components/Layout.tsx'
 import Stundenplan from './components/Stundenplan.tsx'
 import ExamList from './exams/ExamList.tsx'
@@ -47,6 +48,8 @@ function App() {
         </div>
       ) : aktiv === 'Unterrichtsplan' ? (
         <Stundenplan lektionen={lektionen} />
+      ) : aktiv === 'Anwesenheit' ? (
+        <Anwesenheit lektionen={lektionen} />
       ) : aktiv === 'Prüfungstermine' ? (
         <ExamList />
       ) : (
