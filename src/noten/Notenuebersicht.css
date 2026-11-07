@@ -19,6 +19,38 @@
   color: var(--color-text-muted);
 }
 
+/* Kachel mit dem Gesamtdurchschnitt, leuchtet wie die nächste Prüfung */
+.gesamtschnitt {
+  display: grid;
+  justify-items: center;
+  gap: 0.25rem;
+  width: min(100%, 18rem);
+  margin: 0 auto;
+  padding: 1.25rem 1rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 0.875rem;
+  background-color: var(--color-surface);
+  box-shadow: 0 0 1.5rem var(--color-glow);
+  text-align: center;
+}
+
+.gesamtschnitt__titel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-orange-light);
+}
+
+.gesamtschnitt__wert {
+  font-size: 3rem;
+  line-height: 1.1;
+  color: var(--color-accent);
+}
+
+.gesamtschnitt__detail {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
 .noten__titel {
   margin: 2rem 0 0.875rem;
   font-size: 1.5rem;

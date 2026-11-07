@@ -39,3 +39,8 @@ export function schnittProModul(noten: Note[]): Modulschnitt[] {
     .map(([modul, werte]) => ({ modul, anzahl: werte.length, schnitt: durchschnitt(werte) }))
     .sort((a, b) => a.modul.localeCompare(b.modul, 'de'))
 }
+
+/** Jedes Modul zählt gleich viel, egal wie viele Prüfungen es hatte. */
+export function gesamtdurchschnitt(modulschnitte: Modulschnitt[]) {
+  return durchschnitt(modulschnitte.map((m) => m.schnitt))
+}

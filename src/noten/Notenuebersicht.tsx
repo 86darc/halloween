@@ -1,4 +1,4 @@
-import { alsNote, GENUEGEND, nachDatum, schnittProModul } from './noten.ts'
+import { alsNote, gesamtdurchschnitt, GENUEGEND, nachDatum, schnittProModul } from './noten.ts'
 import { testNoten } from './testNoten.ts'
 import './Notenuebersicht.css'
 
@@ -25,6 +25,12 @@ function Notenuebersicht() {
         <h1>Noten</h1>
         <p>Deine Prüfungsnoten und Durchschnitte.</p>
       </header>
+
+      <div className="gesamtschnitt">
+        <span className="gesamtschnitt__titel">Gesamtdurchschnitt</span>
+        <strong className="gesamtschnitt__wert">{alsNote(gesamtdurchschnitt(modulschnitte))}</strong>
+        <span className="gesamtschnitt__detail">Mittel aus {modulschnitte.length} Modulschnitten</span>
+      </div>
 
       <h2 className="noten__titel">Durchschnitt pro Modul</h2>
       <ul className="modulschnitte">
