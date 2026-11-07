@@ -1,0 +1,128 @@
+.anwesenheit {
+  width: min(100%, 52rem);
+  margin-inline: auto;
+  padding-block: 1.5rem 2.5rem;
+}
+
+.anwesenheit__kopf {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.anwesenheit__kopf h1 {
+  margin: 0;
+  text-shadow: 0 0 1.5rem var(--color-glow);
+}
+
+.anwesenheit__kopf p {
+  margin: 0.5rem 0 0;
+  color: var(--color-text-muted);
+}
+
+/* Kachel mit der Quote, leuchtet wie die nächste Prüfung */
+.anwesenheit__quote {
+  display: grid;
+  justify-items: center;
+  gap: 0.25rem;
+  width: min(100%, 18rem);
+  margin: 0 auto 2rem;
+  padding: 1.25rem 1rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 0.875rem;
+  background-color: var(--color-surface);
+  box-shadow: 0 0 1.5rem var(--color-glow);
+  text-align: center;
+}
+
+.anwesenheit__quote-titel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-orange-light);
+}
+
+.anwesenheit__quote-wert {
+  font-size: 3rem;
+  line-height: 1.1;
+  color: var(--color-accent);
+}
+
+.anwesenheit__quote-detail {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.anwesenheit__filter {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.anwesenheit__filter label {
+  font-weight: 600;
+}
+
+.anwesenheit__filter select {
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 0.5rem;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font: inherit;
+}
+
+/* Breite Tabellen scrollen auf schmalen Bildschirmen seitlich */
+.anwesenheit__tabelle {
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 0.875rem;
+  background-color: var(--color-surface);
+}
+
+.anwesenheit__tabelle table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.anwesenheit__tabelle th,
+.anwesenheit__tabelle td {
+  padding: 0.625rem 1rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.anwesenheit__tabelle th {
+  font-size: 0.8125rem;
+  color: var(--color-orange-light);
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.anwesenheit__tabelle tbody tr + tr td {
+  border-top: 1px solid var(--color-border);
+}
+
+.status {
+  display: inline-block;
+  padding: 0.125rem 0.625rem;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.status--anwesend {
+  color: var(--color-brown-dark);
+  background-color: var(--color-orange-light);
+}
+
+.status--abwesend {
+  color: var(--error);
+  background-color: var(--error-bg);
+}
+
+.anwesenheit__leer {
+  padding: 2rem 1rem;
+  border: 1px dashed var(--color-border);
+  border-radius: 0.875rem;
+  text-align: center;
+  color: var(--color-text-muted);
+}

@@ -1,8 +1,12 @@
 import { useState } from 'react'
 import './App.css'
+import Anwesenheit from './anwesenheit/Anwesenheit.tsx'
 import Layout from './components/Layout.tsx'
+import OffeneAufgaben from './aufgaben/OffeneAufgaben.tsx'
 import Stundenplan from './components/Stundenplan.tsx'
+import Notenuebersicht from './noten/Notenuebersicht.tsx'
 import ExamList from './exams/ExamList.tsx'
+import Lernmaterial from './lernmaterial/Lernmaterial.tsx'
 import HomeScreen from './screens/HomeScreen.jsx'
 import ExamRegistration from './exams/ExamRegistration.tsx'
 import LoginScreen from './screens/LoginScreen.jsx'
@@ -42,16 +46,24 @@ function App() {
 
   return (
     <Layout benutzer={benutzer} onAbmelden={abmelden} aktiv={aktiv} onWaehlen={setAktiv}>
-      {aktiv === 'Startseite' ? (
+      {aktiv === 'Lernmaterial' ? (
+        <Lernmaterial lektionen={lektionen} />
+      ) : aktiv === 'Startseite' ? (
         <div className="page">
           <HomeScreen user={benutzer} />
         </div>
+      ) : aktiv === 'Offene Aufgaben' ? (
+        <OffeneAufgaben benutzer={benutzer} />
       ) : aktiv === 'Unterrichtsplan' ? (
         <Stundenplan lektionen={lektionen} />
+      ) : aktiv === 'Anwesenheit' ? (
+        <Anwesenheit lektionen={lektionen} />
       ) : aktiv === 'Prüfungstermine' ? (
         <ExamList />
       ) : aktiv === 'Prüfungsanmeldung' ? (
         <ExamRegistration benutzer={benutzer} />
+      ) : aktiv === 'Noten' ? (
+        <Notenuebersicht />
       ) : (
         <section>
           <h1>{aktiv}</h1>

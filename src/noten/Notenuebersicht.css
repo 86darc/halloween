@@ -1,0 +1,160 @@
+.noten {
+  width: min(100%, 52rem);
+  margin-inline: auto;
+  padding-block: 1.5rem 2.5rem;
+}
+
+.noten__kopf {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.noten__kopf h1 {
+  margin: 0;
+  text-shadow: 0 0 1.5rem var(--color-glow);
+}
+
+.noten__kopf p {
+  margin: 0.5rem 0 0;
+  color: var(--color-text-muted);
+}
+
+/* Kachel mit dem Gesamtdurchschnitt, leuchtet wie die nächste Prüfung */
+.gesamtschnitt {
+  display: grid;
+  justify-items: center;
+  gap: 0.25rem;
+  width: min(100%, 18rem);
+  margin: 0 auto;
+  padding: 1.25rem 1rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 0.875rem;
+  background-color: var(--color-surface);
+  box-shadow: 0 0 1.5rem var(--color-glow);
+  text-align: center;
+}
+
+.gesamtschnitt__titel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-orange-light);
+}
+
+.gesamtschnitt__wert {
+  font-size: 3rem;
+  line-height: 1.1;
+  color: var(--color-accent);
+}
+
+.gesamtschnitt__detail {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.noten__titel {
+  margin: 2rem 0 0.875rem;
+  font-size: 1.5rem;
+  color: var(--color-orange-light);
+}
+
+/* Durchschnitt pro Modul als Kacheln */
+.modulschnitte {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.modulschnitt {
+  display: grid;
+  gap: 0.125rem;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-accent);
+  border-radius: 0.875rem;
+  background-color: var(--color-surface);
+}
+
+.modulschnitt__modul {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.modulschnitt__wert {
+  font-size: 1.75rem;
+  line-height: 1.2;
+  color: var(--color-accent);
+}
+
+.modulschnitt__anzahl {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.modulschnitt--ungenuegend {
+  border-top-color: var(--error);
+}
+
+.modulschnitt--ungenuegend .modulschnitt__wert {
+  color: var(--error);
+}
+
+/* Breite Tabellen scrollen auf schmalen Bildschirmen seitlich */
+.noten__tabelle {
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 0.875rem;
+  background-color: var(--color-surface);
+}
+
+.noten__tabelle table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.noten__tabelle th,
+.noten__tabelle td {
+  padding: 0.625rem 1rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.noten__tabelle th {
+  font-size: 0.8125rem;
+  color: var(--color-orange-light);
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.noten__tabelle tbody tr + tr td {
+  border-top: 1px solid var(--color-border);
+}
+
+.noten__tabelle .noten__zahl {
+  text-align: right;
+}
+
+.note {
+  display: inline-block;
+  min-width: 3.25rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-brown-dark);
+  background-color: var(--color-orange-light);
+}
+
+.note--ungenuegend {
+  color: var(--error);
+  background-color: var(--error-bg);
+}
+
+.noten__leer {
+  padding: 2rem 1rem;
+  border: 1px dashed var(--color-border);
+  border-radius: 0.875rem;
+  text-align: center;
+  color: var(--color-text-muted);
+}
