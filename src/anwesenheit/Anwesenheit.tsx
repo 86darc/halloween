@@ -4,6 +4,7 @@ import type { Lektion } from '../types.ts'
 import './Anwesenheit.css'
 
 const LOCALE = 'de-CH'
+const ALLE = ''
 
 interface AnwesenheitProps {
   lektionen: Lektion[]
@@ -11,7 +12,10 @@ interface AnwesenheitProps {
 
 function Anwesenheit({ lektionen }: AnwesenheitProps) {
   const [jetzt] = useState(() => new Date())
-  const eintraege = erfassteLektionen(lektionen, jetzt)
+  const [modul, setModul] = useState(ALLE)
+  const erfasst = erfassteLektionen(lektionen, jetzt)
+  const module = [...new Set(erfasst.map((e) => e.lektion.fach))].sort((a, b) => a.localeCompare(b, 'de'))
+  const eintraege = modul === ALLE ? erfasst : erfasst.filter((e) => e.lektion.fach === modul)
 
   return (
     <section className="anwesenheit">
@@ -19,6 +23,18 @@ function Anwesenheit({ lektionen }: AnwesenheitProps) {
         <h1>Anwesenheit</h1>
         <p>Deine besuchten und verpassten Lektionen.</p>
       </header>
+
+      <div className="anwesenheit__filter">
+        <label htmlFor="anwesenheit-modul">Modul</label>
+        <select id="anwesenheit-modul" value={modul} onChange={(e) => setModul(e.target.value)}>
+          <option value={ALLE}>Alle Module</option>
+          {module.map((name) => (
+            <option key={name} value={name}>
+              {name}
+            </option>
+          ))}
+        </select>
+      </div>
 
       {eintraege.length === 0 ? (
         <p className="anwesenheit__leer">Noch keine Lektionen erfasst.</p>
