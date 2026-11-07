@@ -4,6 +4,7 @@ import Layout from './components/Layout.tsx'
 import Stundenplan from './components/Stundenplan.tsx'
 import ExamList from './exams/ExamList.tsx'
 import HomeScreen from './screens/HomeScreen.jsx'
+import ExamRegistration from './exams/ExamRegistration.tsx'
 import LoginScreen from './screens/LoginScreen.jsx'
 import RegisterScreen from './screens/RegisterScreen.jsx'
 import { clearSession, getSession } from './auth.js'
@@ -49,6 +50,8 @@ function App() {
         <Stundenplan lektionen={lektionen} />
       ) : aktiv === 'Prüfungstermine' ? (
         <ExamList />
+      ) : aktiv === 'Prüfungsanmeldung' ? (
+        <ExamRegistration benutzer={benutzer} />
       ) : (
         <section>
           <h1>{aktiv}</h1>
