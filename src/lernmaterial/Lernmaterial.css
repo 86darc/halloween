@@ -138,6 +138,27 @@
   color: var(--color-text-muted);
 }
 
+.material__aktionen {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.material__aktionen a {
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.material__aktionen a:hover {
+  color: var(--color-brown-dark);
+  background-color: var(--color-accent);
+}
+
 .lernmaterial__leer {
   padding: 2rem 1rem;
   border: 1px dashed var(--color-border);

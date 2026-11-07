@@ -1,4 +1,4 @@
-import { materialienFuer } from './materialien.ts'
+import { dateiUrl, materialienFuer } from './materialien.ts'
 import type { Modul } from './module.ts'
 
 const LOCALE = 'de-CH'
@@ -36,6 +36,14 @@ function MaterialListe({ modul, onZurueck }: MaterialListeProps) {
                     {new Date(`${material.hochgeladen}T00:00:00`).toLocaleDateString(LOCALE)}
                   </time>
                 </span>
+              </div>
+              <div className="material__aktionen">
+                <a href={dateiUrl(material)} target="_blank" rel="noopener" aria-label={`${material.titel} öffnen`}>
+                  Öffnen
+                </a>
+                <a href={dateiUrl(material)} download={material.datei} aria-label={`${material.titel} herunterladen`}>
+                  Herunterladen
+                </a>
               </div>
             </li>
           ))}
