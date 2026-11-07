@@ -78,6 +78,37 @@
   white-space: nowrap;
 }
 
+.aufgabe__frist {
+  margin-top: 0.25rem;
+  padding: 0.125rem 0.625rem;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--color-orange-light);
+  background-color: var(--color-background);
+}
+
+/* Heute oder morgen fällig: leuchtet wie die nächste Prüfung */
+.aufgabe--bald {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 1.25rem var(--color-glow);
+}
+
+.aufgabe--bald .aufgabe__frist {
+  color: var(--color-brown-dark);
+  background-color: var(--color-orange-light);
+}
+
+.aufgabe--ueberfaellig {
+  border-color: var(--error);
+}
+
+.aufgabe--ueberfaellig .aufgabe__frist {
+  color: var(--error);
+  background-color: var(--error-bg);
+}
+
 .aufgaben__leer {
   padding: 2rem 1rem;
   border: 1px dashed var(--color-border);

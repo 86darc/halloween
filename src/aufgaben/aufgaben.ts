@@ -22,3 +22,16 @@ export function abgegebeneLaden(email: string): number[] {
 export function offeneAufgaben(aufgaben: Aufgabe[], abgegeben: number[]) {
   return aufgaben.filter((aufgabe) => !abgegeben.includes(aufgabe.id))
 }
+
+/** Nächste Abgabe zuerst, Überfälliges steht damit ganz oben. */
+export function nachAbgabedatum(aufgaben: Aufgabe[]) {
+  return [...aufgaben].sort((a, b) => a.abgabedatum.localeCompare(b.abgabedatum))
+}
+
+export function fristText(tage: number) {
+  if (tage < -1) return `${-tage} Tage überfällig`
+  if (tage === -1) return 'Seit gestern überfällig'
+  if (tage === 0) return 'Heute fällig'
+  if (tage === 1) return 'Morgen fällig'
+  return `in ${tage} Tagen`
+}
