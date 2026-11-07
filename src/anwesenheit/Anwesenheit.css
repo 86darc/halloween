@@ -19,6 +19,38 @@
   color: var(--color-text-muted);
 }
 
+/* Kachel mit der Quote, leuchtet wie die nächste Prüfung */
+.anwesenheit__quote {
+  display: grid;
+  justify-items: center;
+  gap: 0.25rem;
+  width: min(100%, 18rem);
+  margin: 0 auto 2rem;
+  padding: 1.25rem 1rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 0.875rem;
+  background-color: var(--color-surface);
+  box-shadow: 0 0 1.5rem var(--color-glow);
+  text-align: center;
+}
+
+.anwesenheit__quote-titel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-orange-light);
+}
+
+.anwesenheit__quote-wert {
+  font-size: 3rem;
+  line-height: 1.1;
+  color: var(--color-accent);
+}
+
+.anwesenheit__quote-detail {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
 .anwesenheit__filter {
   display: flex;
   align-items: center;

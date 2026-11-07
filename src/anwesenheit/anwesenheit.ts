@@ -19,3 +19,9 @@ export function erfassteLektionen(lektionen: Lektion[], jetzt: Date): Eintrag[] 
     .sort((a, b) => b.datum.localeCompare(a.datum) || b.start.localeCompare(a.start))
     .map((lektion) => ({ lektion, anwesend: !ABWESEND.has(lektion.id) }))
 }
+
+/** Anteil der besuchten Lektionen zwischen 0 und 1, ohne erfasste Lektionen null */
+export function anwesenheitsquote(eintraege: Eintrag[]) {
+  if (eintraege.length === 0) return null
+  return eintraege.filter((e) => e.anwesend).length / eintraege.length
+}
