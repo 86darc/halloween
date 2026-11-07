@@ -19,6 +19,56 @@
   color: var(--color-text-muted);
 }
 
+.noten__titel {
+  margin: 2rem 0 0.875rem;
+  font-size: 1.5rem;
+  color: var(--color-orange-light);
+}
+
+/* Durchschnitt pro Modul als Kacheln */
+.modulschnitte {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.modulschnitt {
+  display: grid;
+  gap: 0.125rem;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-accent);
+  border-radius: 0.875rem;
+  background-color: var(--color-surface);
+}
+
+.modulschnitt__modul {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.modulschnitt__wert {
+  font-size: 1.75rem;
+  line-height: 1.2;
+  color: var(--color-accent);
+}
+
+.modulschnitt__anzahl {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.modulschnitt--ungenuegend {
+  border-top-color: var(--error);
+}
+
+.modulschnitt--ungenuegend .modulschnitt__wert {
+  color: var(--error);
+}
+
 /* Breite Tabellen scrollen auf schmalen Bildschirmen seitlich */
 .noten__tabelle {
   overflow-x: auto;
