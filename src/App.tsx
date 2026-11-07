@@ -4,6 +4,7 @@ import Layout from './components/Layout.tsx'
 import OffeneAufgaben from './aufgaben/OffeneAufgaben.tsx'
 import Stundenplan from './components/Stundenplan.tsx'
 import ExamList from './exams/ExamList.tsx'
+import Lernmaterial from './lernmaterial/Lernmaterial.tsx'
 import HomeScreen from './screens/HomeScreen.jsx'
 import LoginScreen from './screens/LoginScreen.jsx'
 import RegisterScreen from './screens/RegisterScreen.jsx'
@@ -42,7 +43,9 @@ function App() {
 
   return (
     <Layout benutzer={benutzer} onAbmelden={abmelden} aktiv={aktiv} onWaehlen={setAktiv}>
-      {aktiv === 'Startseite' ? (
+      {aktiv === 'Lernmaterial' ? (
+        <Lernmaterial lektionen={lektionen} />
+      ) : aktiv === 'Startseite' ? (
         <div className="page">
           <HomeScreen user={benutzer} />
         </div>
