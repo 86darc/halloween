@@ -4,6 +4,7 @@ import Anwesenheit from './anwesenheit/Anwesenheit.tsx'
 import Layout from './components/Layout.tsx'
 import OffeneAufgaben from './aufgaben/OffeneAufgaben.tsx'
 import Stundenplan from './components/Stundenplan.tsx'
+import Notenuebersicht from './noten/Notenuebersicht.tsx'
 import ExamList from './exams/ExamList.tsx'
 import Lernmaterial from './lernmaterial/Lernmaterial.tsx'
 import HomeScreen from './screens/HomeScreen.jsx'
@@ -58,6 +59,8 @@ function App() {
         <Anwesenheit lektionen={lektionen} />
       ) : aktiv === 'Prüfungstermine' ? (
         <ExamList />
+      ) : aktiv === 'Noten' ? (
+        <Notenuebersicht />
       ) : (
         <section>
           <h1>{aktiv}</h1>
