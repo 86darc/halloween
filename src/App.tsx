@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Layout from './components/Layout.tsx'
 import Stundenplan from './components/Stundenplan.tsx'
+import Notenuebersicht from './noten/Notenuebersicht.tsx'
 import ExamList from './exams/ExamList.tsx'
 import HomeScreen from './screens/HomeScreen.jsx'
 import LoginScreen from './screens/LoginScreen.jsx'
@@ -49,6 +50,8 @@ function App() {
         <Stundenplan lektionen={lektionen} />
       ) : aktiv === 'Prüfungstermine' ? (
         <ExamList />
+      ) : aktiv === 'Noten' ? (
+        <Notenuebersicht />
       ) : (
         <section>
           <h1>{aktiv}</h1>

@@ -1,0 +1,78 @@
+.noten {
+  width: min(100%, 52rem);
+  margin-inline: auto;
+  padding-block: 1.5rem 2.5rem;
+}
+
+.noten__kopf {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.noten__kopf h1 {
+  margin: 0;
+  text-shadow: 0 0 1.5rem var(--color-glow);
+}
+
+.noten__kopf p {
+  margin: 0.5rem 0 0;
+  color: var(--color-text-muted);
+}
+
+/* Breite Tabellen scrollen auf schmalen Bildschirmen seitlich */
+.noten__tabelle {
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 0.875rem;
+  background-color: var(--color-surface);
+}
+
+.noten__tabelle table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.noten__tabelle th,
+.noten__tabelle td {
+  padding: 0.625rem 1rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.noten__tabelle th {
+  font-size: 0.8125rem;
+  color: var(--color-orange-light);
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.noten__tabelle tbody tr + tr td {
+  border-top: 1px solid var(--color-border);
+}
+
+.noten__tabelle .noten__zahl {
+  text-align: right;
+}
+
+.note {
+  display: inline-block;
+  min-width: 3.25rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-brown-dark);
+  background-color: var(--color-orange-light);
+}
+
+.note--ungenuegend {
+  color: var(--error);
+  background-color: var(--error-bg);
+}
+
+.noten__leer {
+  padding: 2rem 1rem;
+  border: 1px dashed var(--color-border);
+  border-radius: 0.875rem;
+  text-align: center;
+  color: var(--color-text-muted);
+}
