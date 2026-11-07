@@ -72,8 +72,44 @@
   color: var(--color-text-muted);
 }
 
+.offer-actions {
+  display: grid;
+  justify-items: end;
+  gap: 0.5rem;
+}
+
+.offer-button {
+  min-width: 7.5rem;
+  padding: 0.4375rem 1rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  color: var(--color-brown-dark);
+  background-color: var(--color-accent);
+  cursor: pointer;
+}
+
+.offer-button:hover {
+  filter: brightness(1.08);
+}
+
+.offer-button--secondary {
+  color: var(--color-accent);
+  background-color: transparent;
+}
+
+.offer-button--secondary:hover {
+  color: var(--color-brown-dark);
+  background-color: var(--color-accent);
+  filter: none;
+}
+
+.offer-hint {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
 .offer-status {
-  justify-self: end;
   padding: 0.25rem 0.75rem;
   border-radius: 999px;
   font-size: 0.875rem;
@@ -105,7 +141,7 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .offer-status {
-    justify-self: start;
+  .offer-actions {
+    justify-items: start;
   }
 }

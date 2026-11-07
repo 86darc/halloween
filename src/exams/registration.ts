@@ -26,3 +26,11 @@ export function loadRegistrations(email: string): number[] {
     return TEST_REGISTRATIONS
   }
 }
+
+export function saveRegistrations(email: string, examIds: number[]) {
+  try {
+    localStorage.setItem(STORAGE_PREFIX + email, JSON.stringify(examIds))
+  } catch {
+    /* ignorieren, die Anmeldung gilt dann nur bis zum Neuladen */
+  }
+}

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { alsIsoDatum } from '../utils/datum.ts'
-import { getUpcomingExams } from './exams'
-import { isRegistrationOpen, loadRegistrations, registrationDeadline } from './registration.ts'
+import { getUpcomingExams, type Exam } from './exams'
+import { isRegistrationOpen, loadRegistrations, registrationDeadline, saveRegistrations } from './registration.ts'
 import { testExams } from './testExams'
 import type { Benutzer } from '../types.ts'
 import './ExamRegistration.css'
@@ -23,8 +23,19 @@ interface ExamRegistrationProps {
 
 function ExamRegistration({ benutzer }: ExamRegistrationProps) {
   const [today] = useState(() => alsIsoDatum(new Date()))
-  const [registrations] = useState(() => loadRegistrations(benutzer.email))
+  const [registrations, setRegistrations] = useState(() => loadRegistrations(benutzer.email))
   const exams = getUpcomingExams(testExams, today)
+
+  function toggleRegistration(exam: Exam) {
+    // Nach Ablauf der Frist ist weder An- noch Abmeldung möglich
+    if (!isRegistrationOpen(exam, today)) return
+
+    const next = registrations.includes(exam.id)
+      ? registrations.filter((id) => id !== exam.id)
+      : [...registrations, exam.id]
+    saveRegistrations(benutzer.email, next)
+    setRegistrations(next)
+  }
 
   return (
     <section className="registration">
@@ -58,9 +69,23 @@ function ExamRegistration({ benutzer }: ExamRegistrationProps) {
                       </time>
                     </span>
                   </div>
-                  <span className={open || registered ? 'offer-status' : 'offer-status offer-status--closed'}>
-                    {statusText(registered, open)}
-                  </span>
+                  <div className="offer-actions">
+                    <span className={open || registered ? 'offer-status' : 'offer-status offer-status--closed'}>
+                      {statusText(registered, open)}
+                    </span>
+                    {open ? (
+                      <button
+                        type="button"
+                        className={registered ? 'offer-button offer-button--secondary' : 'offer-button'}
+                        onClick={() => toggleRegistration(exam)}
+                        aria-label={registered ? `Von ${exam.subject} abmelden` : `Für ${exam.subject} anmelden`}
+                      >
+                        {registered ? 'Abmelden' : 'Anmelden'}
+                      </button>
+                    ) : (
+                      registered && <span className="offer-hint">Abmeldung nicht mehr möglich</span>
+                    )}
+                  </div>
                 </li>
               )
             })}
