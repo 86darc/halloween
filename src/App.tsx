@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import Anwesenheit from './anwesenheit/Anwesenheit.tsx'
 import Layout from './components/Layout.tsx'
 import OffeneAufgaben from './aufgaben/OffeneAufgaben.tsx'
 import Stundenplan from './components/Stundenplan.tsx'
@@ -53,6 +54,8 @@ function App() {
         <OffeneAufgaben benutzer={benutzer} />
       ) : aktiv === 'Unterrichtsplan' ? (
         <Stundenplan lektionen={lektionen} />
+      ) : aktiv === 'Anwesenheit' ? (
+        <Anwesenheit lektionen={lektionen} />
       ) : aktiv === 'Prüfungstermine' ? (
         <ExamList />
       ) : (
